@@ -1,0 +1,57 @@
+@theme "/dev/null"
+
+configuration {
+    show-icons: true;
+    font: "DejaVu Sans Mono 11";
+    drun-show-actions: false;
+}
+
+* {
+    background-color: #000000;
+    text-color: #ffffff;
+    border-color: #ffffff;
+}
+
+window {
+    width: 400px;
+    border: 2px;
+}
+
+inputbar {
+    padding: 8px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: #888888;
+    margin: 0 8px 0 0;
+}
+
+entry {
+    text-color: #ffffff;
+}
+
+listview {
+    lines: 8;
+    padding: 4px 0;
+}
+
+element {
+    padding: 8px;
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element-icon {
+    background-color: inherit;
+}
+
+element selected {
+    background-color: #ffffff;
+    text-color: #000000;
+}
