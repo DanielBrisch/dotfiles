@@ -1,0 +1,17 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) pavucontrol & ;;
+    3) /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
+    4) /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5% ;;
+    5) /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5% ;;
+esac
+
+VOL=$(/usr/bin/pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\d+%' | head -1)
+MUTE=$(/usr/bin/pactl get-sink-mute @DEFAULT_SINK@ | grep -oP 'yes|no')
+
+if [ "$MUTE" = "yes" ]; then
+    echo "MUTE"
+else
+    echo "$VOL"
+fi

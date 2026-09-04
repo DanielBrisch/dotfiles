@@ -1,0 +1,6 @@
+config/i3/local.conf
+config/i3/local.env
+__pycache__/
+*.pyc
+*.bak
+*.swp

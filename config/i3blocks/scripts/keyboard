@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) /usr/bin/setxkbmap -query | grep -q 'layout:     us' && /usr/bin/setxkbmap br || /usr/bin/setxkbmap us ;;
+esac
+
+LAYOUT=$(/usr/bin/setxkbmap -query | awk '/^layout:/ {print $2}')
+
+echo "${LAYOUT^^}"

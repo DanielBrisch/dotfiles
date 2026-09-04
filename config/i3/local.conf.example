@@ -1,0 +1,6 @@
+# Config do i3 específico desta máquina. Copie para local.conf.
+# Incluído no fim de ~/.config/i3/config.
+
+# exec --no-startup-id redshift -l -23.5:-46.6
+# workspace "1" output DP-1
+# workspace "2" output HDMI-0
