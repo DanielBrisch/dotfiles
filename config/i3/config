@@ -8,7 +8,7 @@ exec --no-startup-id blueman-applet
 exec_always --no-startup-id ~/.config/i3/wallpaper-daemon.sh
 exec_always --no-startup-id pkill -x picom; picom -b
 exec_always --no-startup-id pkill -x autotiling
-exec_always --no-startup-id ~/.config/i3/scripts/i3-grid.py
+exec_always --no-startup-id ~/.local/bin/i3grid daemon
 exec --no-startup-id copyq
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -47,7 +47,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-set $move ~/.config/i3/scripts/move-swap.py
+set $move ~/.local/bin/i3grid move
 
 bindsym $mod+Shift+j exec --no-startup-id $move left
 bindsym $mod+Shift+k exec --no-startup-id $move down
@@ -62,6 +62,7 @@ bindsym $mod+Shift+Right exec --no-startup-id $move right
 bindsym $mod+b split h
 bindsym $mod+v split v
 bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/swap.sh
+bindsym $mod+g exec --no-startup-id ~/.local/bin/i3grid flip
 
 bindsym $mod+f fullscreen toggle
 

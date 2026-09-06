@@ -22,6 +22,11 @@ for item in i3 i3blocks kitty rofi picom.conf; do
     link "$item"
 done
 
+BIN="$HOME/.local/bin"
+mkdir -p "$BIN"
+(cd "$(dirname "$SRC")" && go build -o "$BIN/i3grid" ./cmd/i3grid)
+echo "build:   $BIN/i3grid"
+
 for f in local.conf local.env; do
     [ -e "$SRC/i3/$f" ] || { cp "$SRC/i3/$f.example" "$SRC/i3/$f"; echo "criado:  $SRC/i3/$f"; }
 done
